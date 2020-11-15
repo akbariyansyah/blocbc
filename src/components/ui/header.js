@@ -12,7 +12,7 @@ const Header = ({ headlineData, fetchHeadline }) => {
 
 
     return headlineData.loading ? (
-        <Container height="650px">
+        <Container style={{ width: '75rem', height: '40rem' }}>
             <Spinner className="loading-spinner" animation="border" role="status" variant="primary">
                 <span className="sr-only">Loading...</span>
             </Spinner>

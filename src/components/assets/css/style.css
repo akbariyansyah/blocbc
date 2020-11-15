@@ -2,6 +2,10 @@
     font-family: 'Libre';
     src: url('../fonts/LibreBaskerville-Regular.ttf');
 }
+@font-face {
+    font-family: 'Noto';
+    src: url('../fonts/NotoSerif-Regular.ttf');
+}
 .post-title {
     font-family: 'Libre';
 }
@@ -20,9 +24,16 @@
     bottom: 0;
 }
 .loading-spinner {
-   margin-top: 20%;
+   margin-top: 30%;
    margin-left: 49%;
 }
 .regular-container {
-    margin:5% 0px
+    margin:2% 0px
+}
+.regular-header {
+    font-family: 'Libre';
+}
+.banner-word {
+    margin-top: 8%;
+    font-family: 'Noto';    
 }
