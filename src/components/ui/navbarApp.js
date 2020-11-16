@@ -6,7 +6,7 @@ import newspaper from '../assets/newspaper.svg'
 export default function NavbarApp() {
     return (
         <Container mt="5">
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="md" fixed="top">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""

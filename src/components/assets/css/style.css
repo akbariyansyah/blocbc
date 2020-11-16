@@ -54,3 +54,14 @@
     margin-top: 8%;
     font-family: 'Noto';    
 }
+.source-slider {
+    height: 340px;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+.slick-slide {
+    margin: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }

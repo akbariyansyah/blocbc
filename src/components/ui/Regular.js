@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Card, Col, Container, Row, Spinner } from 'react-bootstrap'
 import '../../components/assets/css/style.css'
 import Fade from 'react-reveal/Fade';
 import { fetchRegular } from '../redux/news/regular/regularActions';
@@ -14,7 +14,9 @@ function Regular({ regularData, fetchRegular }) {
     return regularData.loading ? (
         <div>
             <Container>
-
+                <Spinner>
+                    <h1>Loading</h1>
+                </Spinner>
             </Container>
         </div>
     ) : (
@@ -23,7 +25,7 @@ function Regular({ regularData, fetchRegular }) {
                     (
                         <Fade bottom>
                             <Row>
-                                <Col lg={8}>
+                                <Col xs={12} sm={6} lg={8}>
                                     <Card border="grey" bg="dark" text="light" style={{ width: '45rem', height: '15rem', marginBottom: '20px' }}>
                                         <Card.Header>{post.author}</Card.Header>
                                         <Card.Body>
@@ -37,7 +39,7 @@ function Regular({ regularData, fetchRegular }) {
                                         </Card.Body>
                                     </Card>
                                 </Col>
-                                <Col lg={4}>
+                                <Col xs={12} sm={2} lg={4}>
                                     <div className="regular-image-container">
                                         <img alt="image-mini" src={post.urlToImage} />
                                     </div>

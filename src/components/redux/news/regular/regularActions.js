@@ -22,7 +22,7 @@ export const fetchRegularFailure = error => {
 export const fetchRegular = () => {
     return (dispatch) => {
         dispatch(fetchRegularRequest())
-        axios.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`)
+        axios.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}&sortBy=publishedAt&pageSize=100`)
             .then(response => {
                 console.log(response.data.articles)
                 dispatch(fetchRegularSuccess(response.data.articles))
