@@ -33,6 +33,23 @@
 .regular-header {
     font-family: 'Libre';
 }
+.regular-image-container {
+    width: 20rem;
+    height: 15rem;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+.regular-image-container img {
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease;
+
+}
+.regular-image-container:hover img {
+    transform: scale(1.5);
+}
 .banner-word {
     margin-top: 8%;
     font-family: 'Noto';    

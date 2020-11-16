@@ -38,7 +38,9 @@ function Regular({ regularData, fetchRegular }) {
                                     </Card>
                                 </Col>
                                 <Col lg={4}>
-                                    <img style={{ width: '20rem', height: '15rem', marginLeft: '2rem' }} variant="right" src={post.urlToImage} />
+                                    <div className="regular-image-container">
+                                        <img alt="image-mini" src={post.urlToImage} />
+                                    </div>
                                 </Col>
                             </Row>
                         </Fade>
