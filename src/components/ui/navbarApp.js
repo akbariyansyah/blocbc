@@ -5,8 +5,8 @@ import { Container } from 'react-bootstrap'
 import newspaper from '../assets/newspaper.svg'
 export default function NavbarApp() {
     return (
-        <Container mt="5">
-            <Navbar bg="light" expand="md" fixed="top">
+        <Container mt="2">
+            <Navbar bg="light" expand="md" sticky="top">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""

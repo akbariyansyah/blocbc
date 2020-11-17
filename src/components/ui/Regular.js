@@ -13,9 +13,9 @@ function Regular({ regularData, fetchRegular }) {
     }, [])
     return regularData.loading ? (
         <div>
-            <Container>
-                <Spinner>
-                    <h1>Loading</h1>
+            <Container style={{ width: '75rem', height: '40rem' }}>
+                <Spinner className="loading-spinner" animation="border" role="status" variant="primary">
+                    <span className="sr-only">Loading...</span>
                 </Spinner>
             </Container>
         </div>
@@ -31,7 +31,7 @@ function Regular({ regularData, fetchRegular }) {
                                         <Card.Body>
                                             <Card.Title className="regular-header">{post.title}</Card.Title>
                                             <Card.Text>
-                                                {post.description}
+                                            {post.description.substring(0, 100)}...
                                             </Card.Text>
                                             <footer className="blockquote-footer">
                                                 Published at <cite title="Source Title">{post.publishedAt}</cite>

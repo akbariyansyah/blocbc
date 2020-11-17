@@ -59,9 +59,23 @@
     margin-left: 20px;
     margin-right: 100px;
 }
-.slick-slide {
-    margin: 0 10px;
+.slick-slider {
+    margin: 0 -15px;
   }
-  .slick-list {
-    margin: 0 -10px;
+
+.slick-slide {
+    margin-right:15px;
+    margin-left:15px;
+}
+@media only screen and (max-width: 600px) {
+    .slick-slider {
+        margin: 0 -15px;
+      }
+    .slick-slide {
+        margin-right:5px;
+        margin-left:15px;
+    }
+  }
+.navbar-app {
+      height: 2rem;
   }

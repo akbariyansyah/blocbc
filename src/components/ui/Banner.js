@@ -7,7 +7,7 @@ export default function Banner() {
     return (
         <Container>
             <Fade bottom>
-            <h1 className="banner-word">Our Top Editor's pick !</h1>
+            <h1 className="banner-word">Feed !</h1>
             </Fade>
         </Container>
     )
