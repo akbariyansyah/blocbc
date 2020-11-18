@@ -18,7 +18,7 @@ const Header = ({ headlineData, fetchHeadline }) => {
             </Spinner>
         </Container>
     ) : (
-            <Container style={{ marginTop: '1rem' }}>
+            <Container  style={{height:'40rem', marginTop: '1rem' }}>
                 <Carousel className="image-header-carousel" fluid>
                     {headlineData && headlineData.posts && headlineData.posts.map(post =>
                         (

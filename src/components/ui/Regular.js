@@ -1,54 +1,72 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Card, Col, Container, Row, Spinner } from 'react-bootstrap'
+import { Card, Col, Container, Row, Spinner, Button } from 'react-bootstrap'
 import '../../components/assets/css/style.css'
 import Fade from 'react-reveal/Fade';
 import { fetchRegular } from '../redux/news/regular/regularActions';
 import '../../components/assets/css/style.css'
 
 function Regular({ regularData, fetchRegular }) {
+    const [keyword, setkeyword] = useState("")
     useEffect(() => {
-        fetchRegular()
-    }, [])
+        fetchRegular(keyword)
+    }, [keyword])
     return regularData.loading ? (
-        <div>
-            <Container style={{ width: '75rem', height: '40rem' }}>
-                <Spinner className="loading-spinner" animation="border" role="status" variant="primary">
-                    <span className="sr-only">Loading...</span>
-                </Spinner>
-            </Container>
-        </div>
+        <Container style={{ width: '75rem', height: '40rem' }}>
+            <Spinner className="loading-spinner" animation="border" role="status" variant="primary">
+                <span className="sr-only">Loading...</span>
+            </Spinner>
+        </Container>
     ) : (
-            <Container className="regular-container">
-                {regularData && regularData.posts && regularData.posts.map(post =>
-                    (
-                        <Fade bottom>
-                            <Row>
-                                <Col xs={12} sm={6} lg={8}>
-                                    <Card border="grey" bg="dark" text="light" style={{ width: '45rem', height: '15rem', marginBottom: '20px' }}>
-                                        <Card.Header>{post.author}</Card.Header>
-                                        <Card.Body>
-                                            <Card.Title className="regular-header">{post.title}</Card.Title>
-                                            <Card.Text>
-                                            {post.description.substring(0, 100)}...
-                                            </Card.Text>
-                                            <footer className="blockquote-footer">
-                                                Published at <cite title="Source Title">{post.publishedAt}</cite>
-                                            </footer>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                                <Col xs={12} sm={2} lg={4}>
-                                    <div className="regular-image-container">
-                                        <img alt="image-mini" src={post.urlToImage} />
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Fade>
-                    )
-                )}
-            </Container>
+            <>
+                <Container>
+                    <h1>Category</h1>
+                    <br></br>
+                    <div style={{ justifyContent: 'center', marginBottom: '4rem' }}>
+                        <Button onClick={() => setkeyword("sports")} variant="outline-primary">Sports</Button>{' '}
+                        <Button onClick={() => setkeyword("business")} variant="outline-secondary">business</Button>{' '}
+                        <Button onClick={() => setkeyword("health")} variant="outline-success">health</Button>{' '}
+                        <Button onClick={() => setkeyword("general")} variant="outline-warning">general</Button>{' '}
+                        <Button onClick={() => setkeyword("entertainment")} variant="outline-danger">entertainment</Button>{' '}
+                        <Button onClick={() => setkeyword("science")} variant="outline-info">science</Button>{' '}
+                        <Button onClick={() => setkeyword("technology")} variant="outline-dark">technology</Button>
+                    </div>
+                    <br />
+                    <h1>{keyword}</h1>
+                </Container>
+                <Container className="regular-container">
+                    {regularData && regularData.posts && regularData.posts.map(post =>
+                        (
+                            <Fade bottom>
+                                <Row className="regular-row">
+                                    <Col xs={12} sm={12} md={8}>
+                                        <Card border="grey" bg="light" style={{ width: '100%', height: '15rem', marginBottom: '20px' }}>
+                                            <Card.Header className="card-header">{post.author}</Card.Header>
+                                            <Card.Body>
+                                                <Card.Title className="regular-header"><b>{post.title}...</b></Card.Title>
+                                                <Card.Text>
+
+                                                    {post.description}
+                                                </Card.Text>
+                                                <footer className="blockquote-footer">
+                                                    Published at <cite title="Source Title">{post.publishedAt}</cite>
+                                                </footer>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col xs={12} sm={12} md={4}>
+                                        <div className="regular-image-container">
+                                            <img alt="img-mini" src={post.urlToImage} />
+                                        </div>
+                                    </Col>
+
+                                </Row>
+                            </Fade>
+                        )
+                    )}
+                </Container>
+            </>
         )
 }
 const mapStateToProps = state => {
@@ -58,7 +76,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        fetchRegular: () => dispatch(fetchRegular())
+        fetchRegular: keyword => dispatch(fetchRegular(keyword))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Regular)

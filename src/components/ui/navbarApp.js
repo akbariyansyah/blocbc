@@ -15,19 +15,12 @@ export default function NavbarApp() {
                         height="30"
                         className="d-inline-block align-top"
                     />{' '}
-      BlogBC
+      - BlogBC -
     </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">business</Nav.Link>
-                        <Nav.Link href="#link">entertainment</Nav.Link>
-                        <Nav.Link href="#link">general</Nav.Link>
-                        <Nav.Link href="#link">health</Nav.Link>
-                        <Nav.Link href="#link">science</Nav.Link>
-                        <Nav.Link href="#link">sports</Nav.Link>
-                        <Nav.Link href="#link">technology</Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse>

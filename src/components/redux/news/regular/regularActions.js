@@ -19,16 +19,26 @@ export const fetchRegularFailure = error => {
         payload: error
     }
 }
-export const fetchRegular = () => {
+export const fetchRegular = (keyword = "") => {
     return (dispatch) => {
         dispatch(fetchRegularRequest())
-        axios.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}&sortBy=publishedAt&pageSize=100`)
+        if (keyword !== "") {
+            axios.get(`https://newsapi.org/v2/top-headlines?apiKey=${apiKey}&perPage=10&category=${keyword}&country=us`)
             .then(response => {
-                console.log(response.data.articles)
                 dispatch(fetchRegularSuccess(response.data.articles))
             })
             .catch(error => {
                 console.log(error)
             })
+        } else {
+            axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}&sortBy=publishedAt&pageSize=100&language=en`)
+                .then(response => {
+                    dispatch(fetchRegularSuccess(response.data.articles))
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+
     }
 }

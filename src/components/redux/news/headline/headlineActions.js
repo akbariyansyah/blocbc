@@ -22,12 +22,12 @@ export const fetchHeadlineFailure = error => {
 export const fetchHeadline = () => {
     return (dispatch) => {
         dispatch(fetchHeadlineRequest())
-        axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
-            .then(response => {
-                dispatch(fetchHeadlineSuccess(response.data.articles))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        // axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
+        //     .then(response => {
+        //         dispatch(fetchHeadlineSuccess(response.data.articles))
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
     }
 }

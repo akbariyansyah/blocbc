@@ -57,7 +57,7 @@ const Source = ({ sourceData, fetchSource }) => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -66,7 +66,7 @@ const Source = ({ sourceData, fetchSource }) => {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -93,13 +93,13 @@ const Source = ({ sourceData, fetchSource }) => {
             </Spinner>
         </Container>
     ) : (
-            <Container style={{ marginTop: '8rem' }}>
+            <Container className="source-contaienr">
                 <Row>
                     <Col>
                         <h2 style={{ marginBottom: '3rem', fontFamily: 'Noto' }}> Our Top Sources </h2>
                         <Slider {...settings}>
                             {sourceData && sourceData.posts && sourceData.posts.map((post, index) => <div className="source-slider">
-                                <Card bg="light" border={index % 2 === 0 ? "primary" : index % 3 === 0 ? "info" : index % 5 === 0 ? "warning" : index % 7 === 0 ? "dark" : index % 11 === 0 ? "secondary" : "success"} style={{ width: '15rem' }}>
+                                <Card style={{ backgroundColor: '#fff5ea' }} border={index % 2 === 0 ? "primary" : index % 3 === 0 ? "info" : index % 5 === 0 ? "warning" : index % 7 === 0 ? "dark" : index % 11 === 0 ? "secondary" : "success"} style={{ width: '15rem' }}>
                                     <Card.Header><a href={post.url} target="_blank">{post.url}</a></Card.Header>
                                     <Card.Body>
                                         <Card.Title>{post.name}</Card.Title>
