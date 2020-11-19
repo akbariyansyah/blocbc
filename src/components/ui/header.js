@@ -18,7 +18,7 @@ const Header = ({ headlineData, fetchHeadline }) => {
             </Spinner>
         </Container>
     ) : (
-            <Container  style={{height:'40rem', marginTop: '1rem' }}>
+            <Container style={{ height: '40rem', marginTop: '1rem' }}>
                 <Carousel className="image-header-carousel" fluid>
                     {headlineData && headlineData.posts && headlineData.posts.map(post =>
                         (
@@ -28,7 +28,7 @@ const Header = ({ headlineData, fetchHeadline }) => {
                                     src={post.urlToImage}
                                 />
                                 <Carousel.Caption>
-                                    <h3 className="post-title">{post.title}</h3>
+                                    <a href={post.url} target="_blank"><h3 className="post-title">{post.title}</h3></a>
                                     <p> - {post.author} - </p>
                                 </Carousel.Caption>
                             </Carousel.Item>

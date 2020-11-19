@@ -23,6 +23,14 @@
     position: absolute;
     bottom: 0;
 }
+.image-header-carousel a {
+    text-decoration: none;
+    color: white;
+}
+.image-header-carousel a:hover {
+    text-decoration: none;
+    color: white;
+}
 .loading-spinner {
    margin-top: 30%;
    margin-left: 49%;
@@ -32,6 +40,14 @@
 }
 .regular-header {
     font-family: 'Libre';
+}
+.regular-header a {
+    text-decoration: none;
+    color: black;
+}
+.regular-header a:hover {
+    text-decoration: none;
+    color: black;
 }
 .regular-image-container {
     width: 20rem;
@@ -57,7 +73,7 @@
     font-family: 'Noto';    
 }
 .source-container {
-    margin-top: 45rem;
+    margin-top: 4rem;
 }
 .source-slider {
     height: 340px;
@@ -131,7 +147,13 @@
         height: 320px;  
     }
     .source-container {
-        margin-top: 10rem;
+        margin-top: -15rem;
         background-color: blue;
+    }
+    .image-header-carousel p {
+        display: none;
+    }
+    .image-header-carousel a {
+       font-size: 1rem;
     }
 }

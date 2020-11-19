@@ -93,7 +93,7 @@ const Source = ({ sourceData, fetchSource }) => {
             </Spinner>
         </Container>
     ) : (
-            <Container className="source-contaienr">
+            <Container className="source-container">
                 <Row>
                     <Col>
                         <h2 style={{ marginBottom: '3rem', fontFamily: 'Noto' }}> Our Top Sources </h2>
