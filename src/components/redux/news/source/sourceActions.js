@@ -22,12 +22,12 @@ export const fetchSourceFailure = error => {
 export const fetchSource = () => {
     return (dispatch) => {
         dispatch(fetchSourceRequest())
-        // axios.get(`https://newsapi.org/v2/sources?apiKey=0b7c491410404660a0e1370086c2fa3a`)
-        //     .then(response => {
-        //         dispatch(fetchSourceSuccess(response.data.sources))
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+        axios.get(`https://gnews.io/api/v4/search?q=trending&token=7840c54a8e113ef87c10db06f663f641`)
+            .then(response => {
+                dispatch(fetchSourceSuccess(response.data.articles))
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }

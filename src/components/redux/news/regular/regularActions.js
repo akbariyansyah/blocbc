@@ -19,26 +19,26 @@ export const fetchRegularFailure = error => {
         payload: error
     }
 }
-export const fetchRegular = (keyword = "") => {
+export const fetchRegular = (keyword = "nation") => {
     return (dispatch) => {
-    //     dispatch(fetchRegularRequest())
-    //     if (keyword !== "") {
-    //         axios.get(`https://newsapi.org/v2/top-headlines?apiKey=0b7c491410404660a0e1370086c2fa3a&perPage=10&category=${keyword}&country=us`)
-    //         .then(response => {
-    //             dispatch(fetchRegularSuccess(response.data.articles))
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    //     } else {
-    //         axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=0b7c491410404660a0e1370086c2fa3a&sortBy=publishedAt&pageSize=100&language=en`)
-    //             .then(response => {
-    //                 dispatch(fetchRegularSuccess(response.data.articles))
-    //             })
-    //             .catch(error => {
-    //                 console.log(error)
-    //             })
-    //     }
+        dispatch(fetchRegularRequest())
+        if (keyword !== "") {
+            axios.get(`https://gnews.io/api/v4/top-headlines?token=7840c54a8e113ef87c10db06f663f641&lang=en&topic=${keyword}`)
+            .then(response => {
+                dispatch(fetchRegularSuccess(response.data.articles))
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        } else {
+            axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=0b7c491410404660a0e1370086c2fa3a&sortBy=publishedAt&pageSize=100&language=en`)
+                .then(response => {
+                    dispatch(fetchRegularSuccess(response.data.articles))
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
 
     }
 }

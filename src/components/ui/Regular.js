@@ -28,7 +28,7 @@ function Regular({ regularData, fetchRegular }) {
                     </Row>
                     <Row>
                             <Col className="item-1" xs={12} lg={5}>
-                                <Button onClick={() => setkeyword("")} variant="outline-primary">all</Button>
+                                <Button onClick={() => setkeyword("nation")} variant="outline-primary">nation</Button>
                                 <Button className="category-item" onClick={() => setkeyword("business")} variant="outline-secondary">business</Button>
                                 <Button className="category-item" onClick={() => setkeyword("health")} variant="outline-success">health</Button>
                             </Col>
@@ -67,7 +67,7 @@ function Regular({ regularData, fetchRegular }) {
                                     </Col>
                                     <Col xs={12} sm={12} md={4}>
                                         <div className="regular-image-container">
-                                            <img alt="img-mini" src={post.urlToImage} />
+                                            <img alt="img-mini" src={post.image} />
                                         </div>
                                     </Col>
 
