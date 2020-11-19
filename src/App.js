@@ -8,7 +8,7 @@ import Footer from './components/ui/footer'
 function App() {
   return (
     <Provider store={store}>
-      <div style={{backgroundColor:'#fcf5ee'}}>
+      <div style={{backgroundColor:'#ffffff'}}>
         <NavbarApp />
         <Header />
         <Source />

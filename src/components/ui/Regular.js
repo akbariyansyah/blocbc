@@ -57,7 +57,7 @@ function Regular({ regularData, fetchRegular }) {
                                             <Card.Body>
                                                 <Card.Title className="regular-header"><a href={post.url} target="_blank"><b>{post.title}...</b></a></Card.Title>
                                                 <Card.Text>
-                                                    {post.description} <a href={post.url} target="_blank">Read More</a>
+                                                    {post.description.substring(0,100)} <a href={post.url} target="_blank">Read More</a>
                                                 </Card.Text>
                                                 <footer className="blockquote-footer">
                                                     Published at <cite title="Source Title">{post.publishedAt}</cite>

@@ -1,5 +1,5 @@
 import axios from "axios"
-// import { apiKey } from '../../../shared/apiKey'
+import { apiKey } from '../../../shared/apiKey'
 import { FETCH_SOURCE_FAILURE, FETCH_SOURCE_REQUEST, FETCH_SOURCE_SUCCESS } from "./sourceTypes"
 
 export const fetchSourceRequest = () => {
@@ -22,7 +22,7 @@ export const fetchSourceFailure = error => {
 export const fetchSource = () => {
     return (dispatch) => {
         dispatch(fetchSourceRequest())
-        axios.get(`https://gnews.io/api/v4/search?q=trending&token=7840c54a8e113ef87c10db06f663f641`)
+        axios.get(`https://gnews.io/api/v4/search?q=trending&token=${apiKey}`)
             .then(response => {
                 dispatch(fetchSourceSuccess(response.data.articles))
             })
