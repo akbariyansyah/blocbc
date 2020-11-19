@@ -46,7 +46,7 @@ function Regular({ regularData, fetchRegular }) {
                         </Col>
                     </Row>
                 </Container>
-                <Container className="regular-container">
+                <Container>
                     {regularData && regularData.posts && regularData.posts.map(post =>
                         (
                             <Fade bottom>

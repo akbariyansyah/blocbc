@@ -5,7 +5,7 @@
 3. type "npm install" to install all the depedencies 
 4. after that you can type "npm start" to run this project locally
 
-**uploaded version** : 
+**uploaded version** : blogbc-vercel.app
 
 ## Some screenshot
 
