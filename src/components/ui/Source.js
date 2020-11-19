@@ -101,7 +101,7 @@ const Source = ({ sourceData, fetchSource }) => {
             <Container className="source-container">
                 <Row>
                     <Col>
-                        <h2 style={{ marginBottom: '3rem', fontFamily: 'Noto' }}> Our Top Sources </h2>
+                        <h2 style={{ marginBottom: '3rem', fontFamily: 'Noto' }}><b> Our Top Sources </b></h2>
                         <Slider {...settings}>
                             {sourceData && sourceData.posts && sourceData.posts.map((post, index) => <div className="source-slider">
                                 <Card style={{ backgroundColor: '#fff5ea' }} border={index % 2 === 0 ? "primary" : index % 3 === 0 ? "info" : index % 5 === 0 ? "warning" : index % 7 === 0 ? "dark" : index % 11 === 0 ? "secondary" : "success"} style={{ width: '15rem' }}>

@@ -21,12 +21,12 @@ function Regular({ regularData, fetchRegular }) {
     ) : (
             <>
                 <Container>
-                    <Row>
-                        <Col>
+                    <Row className="category-banner">
+                        <Col mb={3}>
                             <h1>Category</h1>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="category-container">
                             <Col className="item-1" xs={12} lg={5}>
                                 <Button onClick={() => setkeyword("nation")} variant="outline-primary">nation</Button>
                                 <Button className="category-item" onClick={() => setkeyword("business")} variant="outline-secondary">business</Button>
@@ -40,9 +40,9 @@ function Regular({ regularData, fetchRegular }) {
                             </Col>
 
                     </Row>
-                    <Row>
+                    <Row className="category-banner">
                         <Col>
-                            <h1>{keyword}</h1>
+                            <h1>{keyword.charAt(0).toUpperCase() + keyword.slice(1)}</h1>
                         </Col>
                     </Row>
                 </Container>

@@ -39,10 +39,12 @@ html {
    margin-top: 30%;
    margin-left: 49%;
 }
-.category-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.category-container, .category-banner {
+    margin-top: 3rem;
+}
+.category-banner h1 {
+    font-family: 'Noto';
+    font-weight: bold;
 }
 .item-1 {
  display: flex;
