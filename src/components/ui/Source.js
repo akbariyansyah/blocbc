@@ -52,7 +52,7 @@ const Source = ({ sourceData, fetchSource }) => {
         prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-                breakpoint: 1080,
+                breakpoint: 1280,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -78,10 +78,15 @@ const Source = ({ sourceData, fetchSource }) => {
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 550,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 2
+                    slidesToScroll: 1,
+                    nextArrow: <div></div>,
+                    prevArrow: <div></div>,
+                    accessibility: false,
+                    arrows: false,
+            
                 }
             }]
 

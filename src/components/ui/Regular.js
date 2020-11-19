@@ -21,21 +21,30 @@ function Regular({ regularData, fetchRegular }) {
     ) : (
             <>
                 <Container>
-                    <div style={{ margin: '0 auto' }}>
-                        <h1>Category</h1>
-                        <br></br>
-                        <div style={{ justifyContent: 'center', marginBottom: '4rem' }}>
-                            <Button onClick={() => setkeyword("")} variant="outline-primary">all</Button>{' '}
-                            <Button onClick={() => setkeyword("business")} variant="outline-secondary">business</Button>{' '}
-                            <Button onClick={() => setkeyword("health")} variant="outline-success">health</Button>{' '}
-                            <Button onClick={() => setkeyword("sports")} variant="outline-warning">sport</Button>{' '}
-                            <Button onClick={() => setkeyword("entertainment")} variant="outline-danger">entertainment</Button>{' '}
-                            <Button onClick={() => setkeyword("science")} variant="outline-info">science</Button>{' '}
-                            <Button onClick={() => setkeyword("technology")} variant="outline-dark">technology</Button>
-                        </div>
-                        <br />
-                        <h1>{keyword}</h1>
-                    </div>
+                    <Row>
+                        <Col>
+                            <h1>Category</h1>
+                        </Col>
+                    </Row>
+                    <Row>
+                            <Col className="item-1" xs={12} lg={5}>
+                                <Button onClick={() => setkeyword("")} variant="outline-primary">all</Button>
+                                <Button className="category-item" onClick={() => setkeyword("business")} variant="outline-secondary">business</Button>
+                                <Button className="category-item" onClick={() => setkeyword("health")} variant="outline-success">health</Button>
+                            </Col>
+                            <Col className="item-2" xs={12} lg={7}>
+                                <Button  onClick={() => setkeyword("sports")} variant="outline-warning">sport</Button>
+                                <Button className="category-item" onClick={() => setkeyword("entertainment")} variant="outline-danger">entertainment</Button>
+                                <Button className="category-item" onClick={() => setkeyword("science")} variant="outline-info">science</Button>
+                                <Button className="category-item" onClick={() => setkeyword("technology")} variant="outline-dark">technology</Button>
+                            </Col>
+
+                    </Row>
+                    <Row>
+                        <Col>
+                            <h1>{keyword}</h1>
+                        </Col>
+                    </Row>
                 </Container>
                 <Container className="regular-container">
                     {regularData && regularData.posts && regularData.posts.map(post =>
