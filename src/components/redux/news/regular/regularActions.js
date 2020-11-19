@@ -21,24 +21,24 @@ export const fetchRegularFailure = error => {
 }
 export const fetchRegular = (keyword = "") => {
     return (dispatch) => {
-        dispatch(fetchRegularRequest())
-        if (keyword !== "") {
-            axios.get(`https://newsapi.org/v2/top-headlines?apiKey=0b7c491410404660a0e1370086c2fa3a&perPage=10&category=${keyword}&country=us`)
-            .then(response => {
-                dispatch(fetchRegularSuccess(response.data.articles))
-            })
-            .catch(error => {
-                console.log(error)
-            })
-        } else {
-            axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=0b7c491410404660a0e1370086c2fa3a&sortBy=publishedAt&pageSize=100&language=en`)
-                .then(response => {
-                    dispatch(fetchRegularSuccess(response.data.articles))
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-        }
+    //     dispatch(fetchRegularRequest())
+    //     if (keyword !== "") {
+    //         axios.get(`https://newsapi.org/v2/top-headlines?apiKey=0b7c491410404660a0e1370086c2fa3a&perPage=10&category=${keyword}&country=us`)
+    //         .then(response => {
+    //             dispatch(fetchRegularSuccess(response.data.articles))
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    //     } else {
+    //         axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=0b7c491410404660a0e1370086c2fa3a&sortBy=publishedAt&pageSize=100&language=en`)
+    //             .then(response => {
+    //                 dispatch(fetchRegularSuccess(response.data.articles))
+    //             })
+    //             .catch(error => {
+    //                 console.log(error)
+    //             })
+    //     }
 
     }
 }

@@ -22,12 +22,12 @@ export const fetchSourceFailure = error => {
 export const fetchSource = () => {
     return (dispatch) => {
         dispatch(fetchSourceRequest())
-        axios.get(`https://newsapi.org/v2/sources?apiKey=0b7c491410404660a0e1370086c2fa3a`)
-            .then(response => {
-                dispatch(fetchSourceSuccess(response.data.sources))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        // axios.get(`https://newsapi.org/v2/sources?apiKey=0b7c491410404660a0e1370086c2fa3a`)
+        //     .then(response => {
+        //         dispatch(fetchSourceSuccess(response.data.sources))
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
     }
 }

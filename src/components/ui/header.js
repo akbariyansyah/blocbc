@@ -20,12 +20,13 @@ const Header = ({ headlineData, fetchHeadline }) => {
     ) : (
             <Container style={{ height: '40rem', marginTop: '1rem' }}>
                 <Carousel className="image-header-carousel" fluid>
-                    {headlineData && headlineData.posts && headlineData.posts.map(post =>
+                    {headlineData && headlineData.posts && headlineData.posts.map((post,index) =>
                         (
                             <Carousel.Item interval={2500}>
+                                {console.log()}
                                 <img
                                     className="image-header"
-                                    src={post.urlToImage}
+                                    src={post.image}
                                 />
                                 <Carousel.Caption>
                                     <a href={post.url} target="_blank"><h3 className="post-title">{post.title}</h3></a>
