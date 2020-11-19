@@ -1,5 +1,5 @@
 import axios from "axios"
-import { apiKey } from '../../../shared/apiKey'
+// import { apiKey } from '../../../shared/apiKey'
 import { FETCH_SOURCE_FAILURE, FETCH_SOURCE_REQUEST, FETCH_SOURCE_SUCCESS } from "./sourceTypes"
 
 export const fetchSourceRequest = () => {
@@ -22,7 +22,7 @@ export const fetchSourceFailure = error => {
 export const fetchSource = () => {
     return (dispatch) => {
         dispatch(fetchSourceRequest())
-        axios.get(`https://newsapi.org/v2/sources?apiKey=${apiKey}`)
+        axios.get(`https://newsapi.org/v2/sources?apiKey=0b7c491410404660a0e1370086c2fa3a`)
             .then(response => {
                 dispatch(fetchSourceSuccess(response.data.sources))
             })

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { apiKey } from '../../../shared/apiKey'
+// import { apiKey } from '../../../shared/apiKey'
 import { FETCH_REGULAR_FAILURE, FETCH_REGULAR_REQUEST, FETCH_REGULAR_SUCCESS } from "./regularTypes"
 
 export const fetchRegularRequest = () => {
@@ -23,7 +23,7 @@ export const fetchRegular = (keyword = "") => {
     return (dispatch) => {
         dispatch(fetchRegularRequest())
         if (keyword !== "") {
-            axios.get(`https://newsapi.org/v2/top-headlines?apiKey=${apiKey}&perPage=10&category=${keyword}&country=us`)
+            axios.get(`https://newsapi.org/v2/top-headlines?apiKey=0b7c491410404660a0e1370086c2fa3a&perPage=10&category=${keyword}&country=us`)
             .then(response => {
                 dispatch(fetchRegularSuccess(response.data.articles))
             })
@@ -31,7 +31,7 @@ export const fetchRegular = (keyword = "") => {
                 console.log(error)
             })
         } else {
-            axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}&sortBy=publishedAt&pageSize=100&language=en`)
+            axios.get(`https://newsapi.org/v2/everything?q=apple&apiKey=0b7c491410404660a0e1370086c2fa3a&sortBy=publishedAt&pageSize=100&language=en`)
                 .then(response => {
                     dispatch(fetchRegularSuccess(response.data.articles))
                 })
