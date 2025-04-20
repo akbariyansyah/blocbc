@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Card, Col, Container, Row, Spinner, Button } from 'react-bootstrap'
 import '../../components/assets/css/style.css'
-import Fade from 'react-reveal/Fade';
 import { fetchRegular } from '../redux/news/regular/regularActions';
 import '../../components/assets/css/style.css'
 
@@ -49,7 +48,7 @@ function Regular({ regularData, fetchRegular }) {
                 <Container>
                     {regularData && regularData.posts && regularData.posts.map(post =>
                         (
-                            <Fade bottom>
+                            // <Fade bottom>
                                 <Row className="regular-row">
                                     <Col xs={12} sm={12} md={8}>
                                         <Card border="grey" bg="light" style={{ width: '100%', height: '15rem', marginBottom: '20px' }}>
@@ -72,7 +71,7 @@ function Regular({ regularData, fetchRegular }) {
                                     </Col>
 
                                 </Row>
-                            </Fade>
+                            // </Fade>
                         )
                     )}
                 </Container>
