@@ -5,15 +5,18 @@ import store from './components/redux/store';
 import Regular from './components/ui/Regular';
 import Source from './components/ui/Source';
 import Footer from './components/ui/footer'
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
-      <div style={{backgroundColor:'#ffffff'}}>
-        <NavbarApp />
+      <div style={{ backgroundColor: '#ffffff' }}>
+        <div>
+          <h1>Under construction</h1>
+        </div>
+        {/* <NavbarApp />
         <Header />
         <Source />
         <Regular />
-        <Footer/>
+        <Footer /> */}
       </div>
     </Provider>
 

@@ -21,7 +21,7 @@ function Regular({ regularData, fetchRegular }) {
             <>
                 <Container>
                     <Row className="category-banner">
-                        <Col mb={3}>
+                        <Col>
                             <h1>Category</h1>
                         </Col>
                     </Row>
